@@ -3,8 +3,8 @@
 ADB截图图片匹配点击工具
 功能：通过ADB截屏，匹配图片列表，匹配成功则点击图片中心位置
 """
-
 import os
+import argparse
 import time
 import subprocess
 import cv2
@@ -154,10 +154,10 @@ class ADBScreenshotClick:
         except KeyboardInterrupt:
             print("\n程序已停止")
 
-def main():
+def main(image_dir):
     """主函数"""
     # 创建工具实例
-    adb_tool = ADBScreenshotClick()
+    adb_tool = ADBScreenshotClick(image_dir=image_dir)
     
     # 创建示例模板图片目录说明
     example_dir = adb_tool.image_dir / "example"
@@ -193,4 +193,9 @@ adb exec-out screencap -p > screenshot.png
     adb_tool.run_loop(interval=2)
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="ADB截图图片匹配点击工具")
+    parser.add_argument("--image-dir", type=str, default="images", help="模板图片目录")
+    args = parser.parse_args()
+    if not os.path.exists(args.image_dir):
+        parser.error(f"The directory {args.image_dir} does not exist.")
+    main(args.image_dir)
