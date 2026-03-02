@@ -1,12 +1,14 @@
-# ADB截图图片匹配点击工具
+# 汽水音乐免费畅听自动看广告工具
+
+程序使用 claude-code 配合 GLM4.7 编写,并作细节修改。
 
 ## 功能描述
-通过ADB命令截取Android设备屏幕，在截取的图片中匹配预定义的模板图片列表。如果匹配到任何一个模板图片，则计算该图片的中心位置，并使用ADB命令发送点击事件。每间隔5秒自动执行一次。
+通过ADB命令截取Android设备屏幕，在截取的图片中匹配预定义的模板图片列表。如果匹配到任何一个模板图片，则计算该图片的中心位置，并使用ADB命令发送点击事件。每间隔n秒自动执行一次。
 
 ## 环境要求
 - Python 3.6+
-- OpenCV (自动安装)
-- ADB工具 (已检测到可用)
+- OpenCV
+- ADB工具
 
 ## 安装依赖
 ```bash
@@ -57,14 +59,3 @@ adb exec-out screencap -p > screenshot.png
 3. 模板图片质量影响匹配精度，建议使用清晰的截图
 4. 程序运行中按 Ctrl+C 停止
 
-## 文件结构
-```
-adb_test/
-├── adb_screenshot_click.py  # 主程序
-├── requirements.txt         # Python依赖
-├── run.bat                 # 启动脚本
-├── images/                 # 模板图片目录
-│   ├── README.md          # 使用说明
-│   └── example/           # 示例目录
-└── temp/                  # 临时文件目录
-```
