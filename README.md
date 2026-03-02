@@ -24,24 +24,18 @@ pkg install opencv-python
 
 ## 使用方法
 
-### 1. 简单启动
-双击运行 `run.bat` 文件
+### 1. 确认手机型号
 
-### 2. 手动运行
 ```bash
-# 安装依赖
-pip install -r requirements.txt
-
-# 运行主程序
-python adb_screenshot_click.py
+adb shell getprop ro.product.model
 ```
 
-### 3. 准备模板图片
-1. 在 `images/` 目录下创建PNG格式的模板图片
-2. 模板图片应该是从设备截图中裁剪出的需要匹配的区域
-3. 支持多个模板图片，程序会按顺序匹配
+例如 mate 50 手机: CET-AL00
 
-### 4. 获取模板图片的方法
+### 2. 获取模板图片
+
+如果没有对应的手机型号，需要截屏, 并裁剪需要模式匹配的位置, 保存到对应的手机型号下
+
 ```bash
 # 截取整个屏幕
 adb exec-out screencap -p > screenshot.png
@@ -49,6 +43,7 @@ adb exec-out screencap -p > screenshot.png
 # 使用图片编辑工具裁剪出需要匹配的区域
 # 将裁剪后的图片保存到 images/ 目录下
 ```
+
 
 ## 配置说明
 - 检测间隔: 默认5秒，可在代码中修改

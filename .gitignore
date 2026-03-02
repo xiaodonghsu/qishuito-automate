@@ -1,0 +1,21 @@
+# coder
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# 项目相关
+screen.png
+*.log
+venv/
+env/
+
+# temporary
+.temp/
