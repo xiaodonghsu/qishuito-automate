@@ -14,7 +14,7 @@ build/
 # 项目相关
 screen.png
 *.log
-venv/
+.venv/
 env/
 
 # temporary

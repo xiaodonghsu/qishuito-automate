@@ -222,6 +222,7 @@ class LunaMusicAuto:
             screen = self.capture_screen()
             if screen is None:
                 print("[ERROR] 截屏失败")
+                time.sleep(LOOP_INTERVAL)
                 continue
 
             # 模板匹配并点击
@@ -239,10 +240,6 @@ class LunaMusicAuto:
         print(f"\n[DONE] 完成，连续 {MAX_NO_ACTION_COUNT} 次无操作，程序退出")
 
 
-def main():
+if __name__ == "__main__":
     auto = LunaMusicAuto()
     auto.run()
-
-
-if __name__ == "__main__":
-    main()

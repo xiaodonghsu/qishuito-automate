@@ -1,0 +1,7 @@
+{
+  "reward_status_xpaths": [
+    "//*[@resource-id=\"com.luna.music:id/dga\"]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.view.ViewGroup[5]",
+    "//*[@resource-id=\"com.luna.music:id/dga\"]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[2]/android.view.ViewGroup[5]"
+  ],
+  "continue_reward_xpath": "//*[@resource-id=\"com.luna.music:id/dga\"]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[3]"
+}
